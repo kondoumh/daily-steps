@@ -5,7 +5,6 @@ const path = require('path');
 const http = require('http');
 const url = require('url');
 const destroyer = require('server-destroy');
-let opn;
 const { google } = require('googleapis');
 
 const keyPath = path.join(__dirname, 'oauth2.keys.json');
@@ -47,7 +46,7 @@ async function authenticate(scopes) {
       .listen(3000, () => {
         import('open').then(
           m => {
-            opn = m.default;
+            const opn = m.default;
             opn(authorizeUrl, { wait: false }).then(cp => cp.unref());
           }
         );
