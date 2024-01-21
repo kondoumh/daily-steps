@@ -43,13 +43,10 @@ async function authenticate(scopes) {
           reject(e);
         }
       })
-      .listen(3000, () => {
-        import('open').then(
-          m => {
-            const opn = m.default;
-            opn(authorizeUrl, { wait: false }).then(cp => cp.unref());
-          }
-        );
+      .listen(3000, async () => {
+        const m = await import('open');
+        const opn = m.default;
+        opn(authorizeUrl, { wait: false }).then(cp => cp.unref());
         // open the browser to the authorize url to start the workflow
       });
     destroyer(server);
