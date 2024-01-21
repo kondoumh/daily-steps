@@ -1,0 +1,21 @@
+{
+  "name": "daily-steps",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@google-cloud/local-auth": "^3.0.1",
+    "googleapis": "^131.0.0"
+  },
+  "dependencies": {
+    "open": "^10.0.3",
+    "server-destroy": "^1.0.1"
+  }
+}
